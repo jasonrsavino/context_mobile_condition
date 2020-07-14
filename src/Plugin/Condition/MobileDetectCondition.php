@@ -49,18 +49,17 @@ class MobileDetectCondition extends ConditionPluginBase implements ContainerFact
   /**
    * {@inheritdoc}
    */
-  public function buildConfigurationForm(array $form, FormStateInterface $form_state)
-  {
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $configuration = $this->getConfiguration();
     $form['mobile_detect_condition'] = [
       '#title' => $this->t('Mobile detect'),
-      '#type' => 'radios',
+      '#type' => 'checkboxes',
+      '#default_value' => isset($configuration['mobile_detect_condition']) ? $configuration['mobile_detect_condition'] : [],
       '#options' => array(
-        '0' => $this->t('Mobile Device'),
-        '1' => $this->t('Tablet Device'),
-        '2' => $this->t('Computer device'),
-      ),
-      '#default_value' => isset($configuration['mobile_detect_condition']) && !empty($configuration['mobile_detect_condition']) ? $configuration['mobile_detect_condition'] : 0,
+        'is_mobile' => $this->t('Mobile Device'),
+        'is_tablet' => $this->t('Tablet Device'),
+        'is_computer' => $this->t('Computer Device'),
+      )
     ];
 
     return $form;
