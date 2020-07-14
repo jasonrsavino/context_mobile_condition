@@ -69,8 +69,7 @@ class MobileDetectCondition extends ConditionPluginBase implements ContainerFact
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    */
-  public function submitConfigurationForm(array &$form, FormStateInterface $form_state)
-  {
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     $this->configuration['mobile_detect_condition'] = $form_state->getValue('mobile_detect_condition');
     parent::submitConfigurationForm($form, $form_state);
   }
@@ -88,13 +87,24 @@ class MobileDetectCondition extends ConditionPluginBase implements ContainerFact
    */
   public function evaluate()
   {
-    $detect = new Mobile_Detect;
-    $a = $detect->isMobile();
-    $b = $detect->isTablet();
-    $deviceType = $detect->isMobile() ? 'tablet' : 'computer';
-    $scriptVersion = $detect->getScriptVersion();
+    $configuration = $this->getConfiguration();
+    $detector = new Mobile_Detect;
+    $is_mobile = $detector->isMobile();
+    $is_tablet = $detector->isTablet();
+    $is_computer = !$is_mobile && !$is_tablet ? TRUE : FALSE;
 
-    return true;
+    foreach ($configuration['mobile_detect_condition'] as $key => $value) {
+      if ($key === $value) {
+        if ($is_mobile)
+          return TRUE;
+        if ($is_tablet)
+          return TRUE;
+        if ($is_computer)
+          return TRUE;
+      }
+    }
+
+    return FALSE;
   }
 
 }
