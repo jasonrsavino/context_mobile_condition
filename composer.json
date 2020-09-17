@@ -3,7 +3,7 @@
   "description": "Integrates Context Module with Mobile Detect library",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/context_mobile_condition",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Paulo Henrique Cota Starling (paulocs)",
