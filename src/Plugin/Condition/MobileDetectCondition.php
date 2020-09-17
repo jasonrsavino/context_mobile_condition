@@ -68,7 +68,7 @@ class MobileDetectCondition extends ConditionPluginBase implements ContainerFact
    * {@inheritdoc}
    */
   public function summary() {
-    return t('Select type');
+    return $this->t('Select type');
   }
 
   /**
