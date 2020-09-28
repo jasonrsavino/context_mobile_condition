@@ -11,20 +11,6 @@
       "role": "Maintainer"
     }
   ],
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "mobiledetect/mobiledetectlib",
-        "version": "^2.8",
-        "type": "drupal-library",
-        "dist": {
-          "url": "https://github.com/serbanghita/Mobile-Detect/archive/2.8.34.zip",
-          "type": "zip"
-        }
-      }
-    }
-  ],
   "support": {
     "issues": "https://www.drupal.org/project/issues/context_mobile_condition",
     "source": "https://cgit.drupalcode.org/context_mobile_condition"

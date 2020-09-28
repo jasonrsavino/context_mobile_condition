@@ -79,7 +79,7 @@ class MobileDetectCondition extends ConditionPluginBase implements ContainerFact
     $detector = new Mobile_Detect();
     $is_mobile = $detector->isMobile();
     $is_tablet = $detector->isTablet();
-    $is_computer = !$is_mobile && !$is_tablet ? TRUE : FALSE;
+    $is_computer = !$is_mobile && !$is_tablet;
 
     $configuration_values = $configuration['mobile_detect_condition'];
     if (!$configuration_values['is_computer'] && !$configuration_values['is_mobile'] && !$configuration_values['is_tablet']) {
