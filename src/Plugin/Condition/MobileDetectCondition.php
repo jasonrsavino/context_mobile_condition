@@ -4,8 +4,6 @@ namespace Drupal\context_mobile_condition\Plugin\Condition;
 
 use Drupal\Core\Condition\ConditionPluginBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Mobile_Detect;
 
 /**
@@ -16,7 +14,7 @@ use Mobile_Detect;
  *    label = @Translation("Mobile detect condition"),
  * )
  */
-class MobileDetectCondition extends ConditionPluginBase implements ContainerFactoryPluginInterface {
+class MobileDetectCondition extends ConditionPluginBase {
 
   /**
    * {@inheritdoc}
@@ -28,7 +26,7 @@ class MobileDetectCondition extends ConditionPluginBase implements ContainerFact
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create( array $configuration, $plugin_id, $plugin_definition) {
     return new static(
       $configuration,
       $plugin_id,
