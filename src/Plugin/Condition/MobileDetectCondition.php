@@ -42,7 +42,7 @@ class MobileDetectCondition extends ConditionPluginBase {
     $form['mobile_detect_condition'] = [
       '#title' => $this->t('Mobile detect'),
       '#type' => 'checkboxes',
-      '#description' => $this->t('Nothing checked is samething as everything is checked.'),
+      '#description' => $this->t('If nothing is checked, the evaluation always return TRUE.'),
       '#default_value' => isset($configuration['mobile_detect_condition']) ? $configuration['mobile_detect_condition'] : [],
       '#options' => [
         'is_mobile' => $this->t('Mobile Device'),
