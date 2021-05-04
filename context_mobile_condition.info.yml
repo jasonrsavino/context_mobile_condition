@@ -1,5 +1,5 @@
 name: Context Mobile Condition
-description: Integrates Context Module with Mobile Detect library
+description: Creates a condition based on which device the user is using.
 type: module
 core_version_requirement: ^8 || ^9
 package: Context

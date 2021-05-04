@@ -1,6 +1,6 @@
 {
   "name": "drupal/context_mobile_condition",
-  "description": "Integrates Context Module with Mobile Detect library",
+  "description": "Creates a condition based on the user's device.",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/context_mobile_condition",
   "license": "GPL-2.0-or-later",
