@@ -80,7 +80,7 @@ class MobileDetectCondition extends ConditionPluginBase {
     $is_computer = !$is_mobile && !$is_tablet;
 
     $configuration_values = $configuration['mobile_detect_condition'];
-    if (!$configuration_values['is_computer'] && !$configuration_values['is_mobile'] && !$configuration_values['is_tablet']) {
+    if (!isset($configuration_values) || !$configuration_values['is_computer'] && !$configuration_values['is_mobile'] && !$configuration_values['is_tablet']) {
       return TRUE;
     }
 
