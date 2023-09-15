@@ -16,7 +16,7 @@
     "source": "https://cgit.drupalcode.org/context_mobile_condition"
   },
   "require": {
-    "drupal/core": "^8 || ^9",
-    "mobiledetect/mobiledetectlib": "^2.8"
+    "mobiledetect/mobiledetectlib": "^2.8",
+    "drupal/core": "^8 || ^9 || ^10"
   }
 }
